@@ -1,8 +1,8 @@
 Package: partymakeR
 Type: Package
-Title: What the Package Does (Title Case)
+Title: A Package to Match Political Party Names Across Datasets
 Version: 0.1.0
-Author: Who wrote it
+Author: Roberto Valli
 Maintainer: The package maintainer <yourself@somewhere.net>
 Description: More about what it does (maybe more than one line)
     Use four spaces when indenting paragraphs within the Description.
@@ -10,3 +10,10 @@ License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
 RoxygenNote: 7.2.0
+Suggests: 
+    testthat (>= 3.0.0)
+Config/testthat/edition: 3
+Imports: 
+    dplyr,
+    fuzzyjoin,
+    magrittr

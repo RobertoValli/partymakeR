@@ -14,9 +14,12 @@
 #' @param ... Additional parameters to pass to fuzzyjoin::stringdist_left_join and stringdist::stringdist
 #'
 #' @return A dataframe of matched strings that respect the distance threshold.
-#' @export
+#' @export pm_fuzzy_match
 #'
 #' @examples
+#' # Load package
+#' library(partymakeR)
+#'
 #' # Create example datasets
 #' dat_survey <- data.frame(
 #'   party_names = c("Big party", "Nationals' assembly", "Loser party"),
@@ -34,8 +37,8 @@
 #'                c("party_names" = "name_party"), threshold = 12)
 pm_fuzzy_match <- function(survey_data, meta_data, by,
                            method = "osa", threshold = 5, ...) {
-  require(fuzzyjoin, quietly = TRUE)
-  require(dplyr, quietly = TRUE)
+
+  requireNamespace("magrittr", quitely = T)
 
   # Check that input types are correct
   stopifnot("survey_data must be a data.frame or tibble" =
@@ -44,9 +47,9 @@ pm_fuzzy_match <- function(survey_data, meta_data, by,
               class(meta_data) %in% c("data.frame", "tibble"))
 
   dplyr::distinct(
-    survey_data %>%
     fuzzyjoin::stringdist_left_join(
-        y = meta_data,
+      x = survey_data,
+      y = meta_data,
       method = method,
         by = by,
       distance_col = "distance",

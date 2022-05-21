@@ -21,7 +21,7 @@ c("name_party_survey" = "name_party_meta)}
 \item{...}{Additional parameters to pass to fuzzyjoin::stringdist_left_join and stringdist::stringdist}
 }
 \value{
-A dataframe
+A dataframe of matched strings that respect the distance threshold.
 }
 \description{
 This function is a helper to match party names in new data to a
@@ -29,11 +29,16 @@ This function is a helper to match party names in new data to a
 dataframe that can be checked and manually adjusted.
 }
 \examples{
+# Load package
+library(partymakeR)
+
 # Create example datasets
-dat_survey <- data.frame(party_names = c("Big party", "Nationals' assembly", "Loser party"),
-                         party_id = 1:3)
-dat_meta <- data.frame(name_party = c("big parties", "Nationalist party", "losers"),
-                       id_party = letters[1:3])
+dat_survey <- data.frame(
+  party_names = c("Big party", "Nationals' assembly", "Loser party"),
+  party_id = 1:3)
+dat_meta <- data.frame(
+  name_party = c("big parties", "Nationalist party", "losers"),
+  id_party = letters[1:3])
 
 # Compute match (1 result)
 pm_fuzzy_match(survey_data = dat_survey, meta_data = dat_meta,
