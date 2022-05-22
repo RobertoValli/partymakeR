@@ -7,9 +7,9 @@
 pm_fuzzy_match(survey_data, meta_data, by, method = "osa", threshold = 5, ...)
 }
 \arguments{
-\item{survey_data}{A dataframe or similar with unique party names in survey or poll data}
+\item{survey_data}{A dataframe or similar object with unique party names in survey or poll data}
 
-\item{meta_data}{A dataframe or simila with unique party names in reference party-level dataset (e.g., ParlGov)}
+\item{meta_data}{A dataframe or similar object with unique party names in reference party-level dataset (e.g., ParlGov)}
 
 \item{by}{Expression that defines the variables to be matched in the two dataset, e.g.
 c("name_party_survey" = "name_party_meta)}
