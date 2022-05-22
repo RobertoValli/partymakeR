@@ -19,7 +19,7 @@
 #' see_inputs("..")
 #'
 #' # Enter any number of nested folders
-#' see_inputs("bes")
+#' see_inputs("folder", "subfolder")
 #'
 #' }
 #'
