@@ -5,8 +5,8 @@
 #' "meta dataset" of other party names using a distance metric. It output is a
 #' dataframe that can be checked and manually adjusted.
 #'
-#' @param survey_data A dataframe with unique party names in survey or poll data
-#' @param meta_data A dataframe with unique party names in reference party-level dataset (e.g., ParlGov)
+#' @param survey_data A dataframe or similar object with unique party names in survey or poll data
+#' @param meta_data A dataframe or similar object with unique party names in reference party-level dataset (e.g., ParlGov)
 #' @param by Expression that defines the variables to be matched in the two dataset, e.g.
 #' c("name_party_survey" = "name_party_meta)
 #' @param method One of stringdist matching methods ("osa", "lv", "dl", "hamming", "lcs", "qgram", "cosine", "jaccard", "jw", "soundex")
@@ -41,10 +41,10 @@ pm_fuzzy_match <- function(survey_data, meta_data, by,
   requireNamespace("magrittr", quitely = T)
 
   # Check that input types are correct
-  stopifnot("survey_data must be a data.frame or tibble" =
-              class(survey_data) %in% c("data.frame", "tibble"))
-  stopifnot("meta_data must be a data.frame or tibble" =
-              class(meta_data) %in% c("data.frame", "tibble"))
+  stopifnot("survey_data must be a data.frame, tbl_df or tibble" =
+              class(survey_data) %in% c("tbl_df", "tbl", "data.frame"))
+  stopifnot("meta_data must be a data.frame, tbl_df or tibble" =
+              class(meta_data) %in% c("tbl_df", "tbl", "data.frame"))
 
   dplyr::distinct(
     fuzzyjoin::stringdist_left_join(
