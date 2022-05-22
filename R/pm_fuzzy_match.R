@@ -11,7 +11,7 @@
 #' c("name_party_survey" = "name_party_meta)
 #' @param method One of stringdist matching methods ("osa", "lv", "dl", "hamming", "lcs", "qgram", "cosine", "jaccard", "jw", "soundex")
 #' @param threshold Maximum distance value to be kept
-#' @param ... Additional parameters to pass to fuzzyjoin::stringdist_left_join and stringdist::stringdist
+#' @param ... Additional parameters to pass to \code{fuzzyjoin::stringdist_left_join} and \code{stringdist::stringdist}
 #'
 #' @return A dataframe of matched strings that respect the distance threshold.
 #' @export pm_fuzzy_match

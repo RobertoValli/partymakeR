@@ -18,7 +18,7 @@ c("name_party_survey" = "name_party_meta)}
 
 \item{threshold}{Maximum distance value to be kept}
 
-\item{...}{Additional parameters to pass to fuzzyjoin::stringdist_left_join and stringdist::stringdist}
+\item{...}{Additional parameters to pass to \code{fuzzyjoin::stringdist_left_join} and \code{stringdist::stringdist}}
 }
 \value{
 A dataframe of matched strings that respect the distance threshold.
