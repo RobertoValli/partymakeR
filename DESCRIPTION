@@ -1,7 +1,7 @@
 Package: partymakeR
 Type: Package
 Title: A Package to Match Political Party Names Across Datasets
-Version: 0.1.0
+Version: 0.1.0.9000
 Author: person("Roberto", "Valli", email = "roberto.valli@icr.gess.ethz.ch", role = c("auth"))
 Maintainer: The package maintainer <yourself@somewhere.net>
 Description: More about what it does (maybe more than one line)
