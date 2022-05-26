@@ -29,12 +29,12 @@ load_pf_external <- function(countries = NULL, keep_sources = NULL) {
   if (is.null(countries)) {
 
     dat <- readr::read_csv(here::here("data_intermediate", "partyfacts_processed",
-                                      "partyfacts_external_wide.R"))
+                                      "partyfacts_external_wide.csv"))
 
   } else if (is.character(countries)) {
 
     dat <- readr::read_csv(here::here("data_intermediate", "partyfacts_processed",
-                                      "partyfacts_external_wide.R"))
+                                      "partyfacts_external_wide.csv"))
     dat <- dat[dat$country %in% countries, ]
   }
 
