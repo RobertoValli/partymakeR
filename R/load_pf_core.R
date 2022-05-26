@@ -26,12 +26,14 @@ load_pf_core <- function(countries = NULL) {
   if (is.null(countries)) {
 
     readr::read_csv(here::here("data_input", "partyfacts",
-                               "partyfacts-core-parties.csv"))
+                               "partyfacts-core-parties.csv"),
+                    show_col_types = FALSE)
 
   } else if (is.character(countries)) {
 
     dat <- readr::read_csv(here::here("data_input", "partyfacts",
-                                      "partyfacts-core-parties.csv"))
+                                      "partyfacts-core-parties.csv"),
+                           show_col_types = FALSE)
     dat[dat$country %in% countries, ]
 
   }
