@@ -3,7 +3,8 @@
 #' @param countries A character vector of VDEM country codes.
 #' @param keep_sources A character vector of dataset names included in PartyFacts external data. These include:
 #' "manifesto", "parlgov", "wikipedia", "ches", "clea", "ejpr", "vparty", "chisols", "dpi", "essprtc", "essprtv", "huber", "kitschelt", "polcon", "ppmd", "whogov", "wvs", "afrelec", "afro", "ccdd", "ccs", "coppedge", "cses", "elecglob", "epac", "hix", "erdda", "euandi", "gloelec", "gpd", "gps", "ipod", "janda", "jw", "kurep", "laeda", "latino", "laverhunt", "leadglob", "mackie", "mapp", "morgan", "mudde", "nped", "parlspeech", "postyug", "pip", "poppa", "ppdb", "ppla", "ppmdall", "ray", "tap", "populist", "voteview", "ees14", "ppepe", "thomas"
-#' Note: source data are matched with a regex, so "manif" works just like "manifesto".
+#'
+#' Note: source data are matched with a \code{\link[base]{regex}}, so "manif" works just like "manifesto", and "manifesto|parlg" returns both data from Manifesto and ParlGov datasets.
 #'
 #' @return A tibble with PartyFacts data for the countries and datasets of interest.
 #' @export load_pf_external

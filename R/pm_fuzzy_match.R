@@ -5,6 +5,8 @@
 #' "meta dataset" of other party names using a distance metric. It output is a
 #' dataframe that can be checked and manually adjusted.
 #'
+#' \code{pm_fuzzy_match} is basically a wrapper around \code{\link[fuzzyjoin]{stringdist_left_join}}, which is itself based on \code{\link[stringdist]{stringdist}}.
+#'
 #' @param survey_data A dataframe or similar object with unique party names in survey or poll data
 #' @param meta_data A dataframe or similar object with unique party names in reference party-level dataset (e.g., ParlGov)
 #' @param by Expression that defines the variables to be matched in the two dataset, e.g.

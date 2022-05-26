@@ -27,6 +27,8 @@ A dataframe of matched strings that respect the distance threshold.
 This function is a helper to match party names in new data to a
 "meta dataset" of other party names using a distance metric. It output is a
 dataframe that can be checked and manually adjusted.
+
+\code{pm_fuzzy_match} is basically a wrapper around \code{\link[fuzzyjoin]{stringdist_left_join}}, which is itself based on \code{\link[stringdist]{stringdist}}.
 }
 \examples{
 # Load package

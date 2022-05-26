@@ -13,7 +13,7 @@ see_inputs(... = NULL)
 A tibble with a column of file names and a column of relative paths.
 }
 \description{
-This function assumes a standardized RProject folder structure with a "data_input" folder at top level. The function is a wrapper of \pkg{here} and allows to quickly inspect files and folders.
+This function assumes a standardized RProject folder structure with a "data_input" folder at top level. The function is a wrapper of \code{\link[here]{here}} and allows to quickly inspect files and folders.
 }
 \examples{
 
