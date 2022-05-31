@@ -26,14 +26,17 @@
 see_inputs <- function(... = NULL) {
 
   # Combine arguments
-  dir <- c(...)
+  if (!is.null(...)) {
+    dir <- c(...)
+  }
+
 
   # Add warning
   stopifnot("Input must be quoted file or dir names!" = is.character(dir))
   stopifnot("data_input folder doesn't exist!" = dir.exists(here::here("data_input")))
 
 
-  if(any(length(dir) == 0)) {
+  if(!exists(dir)) {
 
     tibble::tibble(
       file = list.files(here::here("data_input")),
